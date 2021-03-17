@@ -2,6 +2,7 @@
   "name": "pet-adoption",
   "version": "0.1.0",
   "private": true,
+  "license": "GPL-3.0",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
