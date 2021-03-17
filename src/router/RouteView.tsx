@@ -1,14 +1,15 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import { ListingDeck } from '../pets/ListingDeck'
 
-export const RouteView: FunctionComponent = () => {
+export const RouteView: React.FC = () => {
   return (
     <Switch>
       <Route exact path="/">
         <h1>This is the home view</h1>
       </Route>
       <Route path="/pets">
-        <h1>This is pets view</h1>
+        <ListingDeck></ListingDeck>
       </Route>
     </Switch>
   )
