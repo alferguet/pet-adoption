@@ -1,26 +1,21 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Nav from 'react-bootstrap/Nav'
-import NavItem from 'react-bootstrap/NavItem'
 import Container from 'react-bootstrap/Container'
-import { Link } from 'react-router-dom'
+import {NavButton} from './NavButton'
 
-export const Navbar: FunctionComponent = () => {
+export const Navbar: React.FC = () => {
   return (
-    <Container>
+    <Container fluid className="py-2">
       <Row>
-        <Col>
+        <Col md={4}>
           <h2>Pet Adoption App</h2>
         </Col>
-        <Col>
-          <Nav>
-            <NavItem>
-              <Link to="/">Home</Link>
-            </NavItem>
-            <NavItem>
-              <Link to="/pets">Pets</Link>
-            </NavItem>
+        <Col md={{span:4, offset:4}}>
+          <Nav className="float-right">
+						<NavButton to="/" title="Home"></NavButton>
+						<NavButton to="/pets" title="Pets"></NavButton>
           </Nav>
         </Col>
       </Row>
