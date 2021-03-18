@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Navbar } from './layout/Navbar'
+import { Navbar } from './components/layout/Navbar'
 import { RouteView } from './router/RouteView'
 
 export const App: React.FC = () => {

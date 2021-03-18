@@ -1,4 +1,5 @@
-import firebase from 'firebase'
+import app from 'firebase/app'
+import 'firebase/database'
 const PROJECT_ID = process.env.REACT_APP_PROJECT_ID
 const config = {
   apiKey: process.env.API_KEY,
@@ -7,7 +8,6 @@ const config = {
   projectId: PROJECT_ID,
 }
 
-export function initFirebaseDb(): firebase.database.Database {
-  firebase.initializeApp(config)
-  return firebase.database()
+export function initFirebaseDb(): void {
+  app.initializeApp(config)
 }
