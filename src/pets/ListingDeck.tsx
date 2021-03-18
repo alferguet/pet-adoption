@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { CardDeck } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { initFirebaseDb } from '../firebase'
+import { PetListing } from './interfaces/pet-listing.interface'
 import { ListingCard } from './ListingCard'
-import { PetListing } from './pet-listing.interface'
 
 const database = initFirebaseDb()
 
@@ -24,14 +24,11 @@ export const ListingDeck: React.FC = () => {
   }, [])
 
   return (
-    <CardDeck>
-      {listings.map((listing: PetListing) => {
-        return (
-          <ListingCard listing={listing} key={listing.pet.name}>
-            {JSON.stringify(listing)}
-          </ListingCard>
-        )
+    <Container className="d-flex flex-row justify-content-around flex-wrap">
+      {listings.map((listing: PetListing, index) => {
+        listing.id = index
+        return <ListingCard listing={listing} key={index}></ListingCard>
       })}
-    </CardDeck>
+    </Container>
   )
 }
