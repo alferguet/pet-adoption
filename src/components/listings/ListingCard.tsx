@@ -15,12 +15,17 @@ export const ListingCard: React.FC<ListingCardProps> = ({
   const defaultPic = '/bug.png'
   const [pic, setPic] = useState(defaultPic)
   useEffect(() => {
-    const picture = listing.picture
-    if (picture) fetchPic(picture, setPic)
+    // const picture = listing.picture
+    // if (picture) fetchPic(picture, setPic)
   }, [])
   return (
-    <Card className="mr-2 mb-2 p-2">
-      <Card.Img variant="top" className="img-thumbnail" src={pic} />
+    <Card className="mr-2 mb-2">
+      <Card.Img
+        variant="top"
+        className="img-thumbnail"
+        onClick={() => history.push(`/listings/${listing.id}`)}
+        src={pic}
+      />
       <Card.Body onClick={() => history.push(`/listings/${listing.id}`)}>
         <Card.Title>{listing.pet.name}</Card.Title>
         <Card.Text>{listing.description}</Card.Text>
