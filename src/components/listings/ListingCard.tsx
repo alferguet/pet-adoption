@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 import { useHistory } from 'react-router'
 import { fetchPic } from '../../services/listings.service'
 import { PetListing } from '../../types/pet-listing.interface'
-import { FavButton } from './FavButton'
+import { FavButton } from '../FavButton'
 
 interface ListingCardProps {
   listing: PetListing

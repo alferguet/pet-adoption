@@ -3,6 +3,26 @@ import 'firebase/database'
 import 'firebase/storage'
 import { PetListing } from '../types/pet-listing.interface'
 
+export function fetchListing(
+  id: string | undefined,
+  update: (value: React.SetStateAction<PetListing | null>) => void
+): () => void {
+  if (!id)
+    return () => {
+      return
+    }
+  const ref = app.database().ref(`/listings/${id}`)
+  ref.on('value', snapshot => {
+    if (snapshot.exists()) {
+      const listing = snapshot.val()
+      update(listing)
+    }
+  })
+  return () => {
+    ref.off()
+  }
+}
+
 export function fetchListings(
   update: (value: React.SetStateAction<PetListing[]>) => void
 ): () => void {

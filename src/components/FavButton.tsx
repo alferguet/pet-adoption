@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { setFavorite } from '../../services/listings.service'
+import { setFavorite } from '../services/listings.service'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { PetListing } from '../../types/pet-listing.interface'
+import { PetListing } from '../types/pet-listing.interface'
 
 interface FavButtonProps {
   listing: PetListing
