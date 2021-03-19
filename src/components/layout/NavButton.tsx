@@ -14,7 +14,7 @@ export const NavButton: React.FC<NavButtonProps> = ({
   return (
     <NavItem className="pr-3">
       <Link className="text-dark" to={to}>
-        {title}
+        <b>{title}</b>
       </Link>
     </NavItem>
   )

@@ -1,6 +1,6 @@
 import { Pet } from './pet.interface'
 export interface PetListing {
-  id?: number
+  id: number
   pet: Pet
   description: string
   favorite: boolean
