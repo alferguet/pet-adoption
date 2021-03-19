@@ -7,7 +7,7 @@ import { RouteView } from './router/RouteView'
 export const App: React.FC = () => {
   return (
     <Router>
-      <Container fluid className="h-100 mx-0">
+      <Container fluid className="h-100 p-0 mx-0">
         <Navbar></Navbar>
         <RouteView></RouteView>
       </Container>

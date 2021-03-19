@@ -12,7 +12,7 @@ export const FavButton: React.FC<FavButtonProps> = ({
 }: FavButtonProps) => {
   const [inHover, setHover] = useState(false)
   const getColor = () => {
-    if (inHover) return 'yellow'
+    if (inHover) return 'tomato'
     return listing.favorite ? 'pink' : 'black'
   }
   return (
