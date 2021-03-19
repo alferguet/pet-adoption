@@ -3,7 +3,7 @@
 Simple web application made with React and Firebase to provide a place
 to adopt sheltered pets.
 
-The purpose of this repository is to showcase simple React skills.
+The purpose of this repository is to showcase React skills.
 
 ## Technologies used
 
@@ -13,7 +13,7 @@ The purpose of this repository is to showcase simple React skills.
 - Firebase (Realtime Database & Storage)
 - Bootstrap
 - Fontawesome
-- Sass
+- SASS
 
 ## Instructions
 
