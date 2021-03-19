@@ -7,14 +7,16 @@ export function fetchListing(
   id: string | undefined,
   update: (value: React.SetStateAction<PetListing | null>) => void
 ): () => void {
-  if (!id)
+  if (!id) {
     return () => {
       return
     }
+  }
   const ref = app.database().ref(`/listings/${id}`)
   ref.on('value', snapshot => {
     if (snapshot.exists()) {
       const listing = snapshot.val()
+      listing.id = id
       update(listing)
     }
   })

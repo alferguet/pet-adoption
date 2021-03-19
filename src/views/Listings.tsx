@@ -12,7 +12,7 @@ export const Listings: React.FC = () => {
   }, [])
 
   return (
-    <Container className="d-flex flex-row justify-content-around flex-wrap">
+    <Container className="d-flex flex-row justify-content-around flex-wrap pt-3">
       {listings.map((listing: PetListing, index) => {
         listing.id = index
         return <ListingCard listing={listing} key={index}></ListingCard>

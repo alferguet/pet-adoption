@@ -1,6 +1,5 @@
 import React from 'react'
 import NavItem from 'react-bootstrap/NavItem'
-import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 
 interface NavButtonProps {
@@ -14,8 +13,8 @@ export const NavButton: React.FC<NavButtonProps> = ({
 }: NavButtonProps) => {
   return (
     <NavItem className="pr-3">
-      <Link to={to}>
-        <Button>{title}</Button>
+      <Link className="text-dark" to={to}>
+        {title}
       </Link>
     </NavItem>
   )

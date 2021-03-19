@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
-import { useHistory } from 'react-router'
-// import { fetchPic } from '../services/listings.service'
+import { fetchPic } from '../services/listings.service'
 import { PetListing } from '../types/pet-listing.interface'
 import { FavButton } from '../components/FavButton'
 import { useParams } from 'react-router-dom'
@@ -12,7 +11,6 @@ interface ProfileParams {
 }
 export const Profile: React.FC = () => {
   const { id } = useParams<ProfileParams>()
-  const history = useHistory()
   const defaultPic = '/bug.png'
   const [listing, setListing] = useState<PetListing | null>(null)
 
@@ -21,11 +19,15 @@ export const Profile: React.FC = () => {
   }, [])
   const [pic, setPic] = useState(defaultPic)
   useEffect(() => {
-    // const picture = listing.picture
-    // if (picture) fetchPic(picture, setPic)
-  }, [])
+    console.log(listing)
+    if (listing?.picture) {
+      const picture = listing.picture
+      console.log(picture)
+      fetchPic(picture, setPic)
+    }
+  }, [listing])
   return listing ? (
-    <Container fluid>
+    <Container fluid className="pt-3">
       <Row className="justify-content-md-center">
         <Col md={8}>
           <Card>

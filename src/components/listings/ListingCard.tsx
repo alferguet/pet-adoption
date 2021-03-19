@@ -15,11 +15,11 @@ export const ListingCard: React.FC<ListingCardProps> = ({
   const defaultPic = '/bug.png'
   const [pic, setPic] = useState(defaultPic)
   useEffect(() => {
-    // const picture = listing.picture
-    // if (picture) fetchPic(picture, setPic)
+    const picture = listing.picture
+    if (picture) fetchPic(picture, setPic)
   }, [])
   return (
-    <Card className="mr-2 mb-2">
+    <Card className="mr-2 mb-2" style={{ width: '250px' }}>
       <Card.Img
         variant="top"
         className="img-thumbnail"
