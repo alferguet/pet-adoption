@@ -22,10 +22,8 @@ export const Profile: React.FC = () => {
   }, [])
   const [pic, setPic] = useState(defaultPic)
   useEffect(() => {
-    console.log(listing)
     if (listing?.picture) {
       const picture = listing.picture
-      console.log(picture)
       fetchPic(picture, setPic)
     }
   }, [listing])
@@ -55,7 +53,7 @@ export const Profile: React.FC = () => {
                   md={2}
                   className="d-flex flex-column align-items-center pt-1"
                 >
-                  <AdoptButton id={listing.id} />
+                  <AdoptButton />
                   <FavButton id={listing.id} favorite={listing.favorite} />
                 </Col>
               </Row>

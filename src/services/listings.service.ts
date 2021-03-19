@@ -3,6 +3,7 @@ import 'firebase/database'
 import 'firebase/storage'
 import { PetListing } from '../types/pet-listing.interface'
 
+// Updates listing in every change
 export function fetchListing(
   id: string | undefined,
   update: (value: React.SetStateAction<PetListing | null>) => void
@@ -24,7 +25,7 @@ export function fetchListing(
     ref.off()
   }
 }
-
+// Child added is called once and with additions, if changed updates
 export function fetchListings(
   update: (value: React.SetStateAction<PetListing[]>) => void
 ): () => void {
@@ -61,6 +62,7 @@ export function fetchPic(
   picName: string,
   update: (value: React.SetStateAction<string>) => void
 ): void {
+  // Uses firebase storage to fetch picture download urls
   app
     .storage()
     .ref('images/')
@@ -72,19 +74,15 @@ export function fetchPic(
       }
     })
     .catch(err => {
-      console.log(err)
+      // Removed logs, may use toasts
       switch (err.code) {
         case 'storage/object-not-found':
-          // File doesn't exist
           break
         case 'storage/unauthorized':
-          // User doesn't have permission to access the object
           break
         case 'storage/canceled':
-          // User canceled the upload
           break
         case 'storage/unknown':
-          // Unknown error occurred, inspect the server response
           break
       }
     })

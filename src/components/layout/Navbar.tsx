@@ -40,7 +40,7 @@ export const Navbar: React.FC = () => {
               onClick={() => history.push('/')}
               border
             />
-            <h1>P(et)inder</h1>
+            <h1>Pinder</h1>
           </span>
         </Col>
         {location.pathname !== '/listings' ? links : null}
